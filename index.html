@@ -590,8 +590,11 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         <button class="tab-button active flex-1 py-4 px-6 text-lg font-semibold text-gray-700 rounded-tl-3xl" onclick="showTab('yechisu')">
             예쥐수
         </button>
-        <button class="tab-button flex-1 py-4 px-6 text-lg font-semibold text-gray-700 rounded-tr-3xl" onclick="showTab('eatonhwan')">
+        <button class="tab-button flex-1 py-4 px-6 text-lg font-semibold text-gray-700" onclick="showTab('eatonhwan')">
             이튼환
+        </button>
+        <button class="tab-button flex-1 py-4 px-6 text-lg font-semibold text-gray-700 rounded-tr-3xl" onclick="showTab('balmo')">
+            자연발모
         </button>
     </div>
 
@@ -692,10 +695,6 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         </div>
     </section>
 
-        <!-- 푸터 (문구 수정) -->
-        <footer class="text-center p-4 bg-indigo-900 text-white text-xs">
-            모생 한의원 이해민 원장이 직접 처방하고 치료합니다.
-        </footer>
     </div>
 
     <!-- 이튼환 탭 콘텐츠 -->
@@ -813,6 +812,14 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                 <p class="mt-4 text-gray-500 text-sm">한의원 방문 및 온라인 문의를 통해 구매 가능합니다.</p>
             </div>
         </section>
+
+    </div>
+
+    <div id="balmo" class="tab-content" style="background-color: #080808;">
+        <section class="p-0" style="background-color: #080808;">
+            <iframe src="balmo.html" title="자연발모" class="w-full" style="border: none; min-height: 900px;"></iframe>
+        </section>
+    </div>
 
         <!-- 푸터 (한의원 정보 및 연락처 통합) -->
         <footer class="text-center p-4 bg-blue-900 text-white text-base rounded-b-3xl">
