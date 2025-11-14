@@ -591,13 +591,13 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 <div class="max-w-4xl w-full bg-white shadow-2xl rounded-3xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-300">
     <!-- 탭 네비게이션 -->
     <div class="flex bg-gray-100 rounded-t-3xl">
-        <button class="tab-button active flex-1 py-4 px-6 text-lg font-semibold text-gray-700 rounded-tl-3xl" data-tab="yechisu" onclick="showTab('yechisu')">
+        <button type="button" class="tab-button active flex-1 py-4 px-6 text-lg font-semibold text-gray-700 rounded-tl-3xl" data-tab="yechisu" onclick="showTab('yechisu'); return false;">
             예쥐수
         </button>
-        <button class="tab-button flex-1 py-4 px-6 text-lg font-semibold text-gray-700" data-tab="eatonhwan" onclick="showTab('eatonhwan')">
+        <button type="button" class="tab-button flex-1 py-4 px-6 text-lg font-semibold text-gray-700" data-tab="eatonhwan" onclick="showTab('eatonhwan'); return false;">
             이튼환
         </button>
-        <button class="tab-button flex-1 py-4 px-6 text-lg font-semibold text-gray-700 rounded-tr-3xl" data-tab="balmo" onclick="showTab('balmo')">
+        <button type="button" class="tab-button flex-1 py-4 px-6 text-lg font-semibold text-gray-700 rounded-tr-3xl" data-tab="balmo" onclick="showTab('balmo'); return false;">
             자연발모
         </button>
     </div>
@@ -779,7 +779,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                     <p class="text-gray-700 text-lg leading-relaxed mt-2 font-semibold">
                         다음과 같은 분들께 특히 권합니다:
                     </p>
-                    <ul class="text-gray-700 text-lg leading-relaxed space-y-1 mt-2 list-disc list-inside">
+                    <ul class="text-gray-700 text-lg leading-[1.2] mt-2 list-disc list-inside" style="line-height: 1.2 !important;">
                         <li class="text-sm">스트레스로 붓는 잇몸</li>
                         <li class="text-sm">당뇨로 약해진 잇몸 보호</li>
                         <li class="text-sm">임플란트 후에 잇몸 관리</li>
@@ -823,16 +823,15 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         <header class="p-8 sm:p-12 text-center text-white relative rounded-t-3xl shadow-xl" style="background-color: #080808;">
             <div class="absolute inset-0 opacity-15 pointer-events-none"></div>
             <h1 class="text-4xl sm:text-6xl font-extrabold mb-2 leading-tight tracking-tight text-shadow-custom">
-                자연 발모는 가능합니다
-            </h1>
+                획기적인 탈모 치료와 발모법 </h1>
             <p class="text-xl sm:text-3xl font-light mt-3 text-shadow-custom">
                 3개월만 꾸준히 따라하면 머리카락은 납니다.
             </p>
         </header>
 
         <div class="text-center py-6 sm:py-10 bg-white border-b-4 border-yellow-400">
-            <h2 class="text-6xl sm:text-8xl font-black text-[#080808] tracking-tighter drop-shadow-lg">
-                자연 발모 기술
+            <h2 class="text-5xl sm:text-5.5xl font-black text-[#080808] tracking-tighter drop-shadow-lg">
+                발모시동 + 탈모인의 노력 = 발모 성공
             </h2>
             <p class="text-base sm:text-xl text-gray-500 mt-2 italic">
                 모생환+흑수+발모캡 = 3개월에서 7개월에 완치 가능
@@ -844,40 +843,45 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                 <div class="bg-blue-50 p-6 rounded-2xl shadow-xl border-t-8 border-blue-500 transform transition duration-300 hover:bg-blue-100">
                     <div class="flex items-center mb-3">
                         <span class="text-3xl mr-3 text-blue-600">☯️</span>
-                        <h4 class="text-2xl font-bold text-blue-800">모생진 요법</h4>
+                        <h4 class="text-2xl font-bold text-blue-800">1. 탈모 치료</h4>
                     </div>
                     <p class="text-gray-700 text-lg leading-relaxed mt-2">
-                        모생진으로 머리카락이 빠지는 것을 치료합니다.
+                        머리가 가늘어지고 빠지는 것을 치료 하는 것
                     </p>
+                    <img src="talmo1.png" alt="모생진으로 탈모 치료 전후 비교" class="rounded-lg shadow-md" style="width: 95%; max-width: 100%; height: auto; display: block; margin: 1rem auto 0;">
                 </div>
 
                 <div class="bg-indigo-50 p-6 rounded-2xl shadow-xl border-t-8 border-indigo-500 transform transition duration-300 hover:bg-indigo-100">
                     <div class="flex items-center mb-3">
                         <span class="text-3xl mr-3 text-indigo-600">🌱</span>
                         <h4 class="text-2xl font-bold text-indigo-800 leading-tight">
-                            <span style="white-space: nowrap;">인체의 힘</span><br>
+                            <span style="white-space: nowrap;">2. 발모</span><br>
                         </h4>
                     </div>
-                    <ul class="text-gray-700 text-lg leading-relaxed space-y-3 mt-2">
-                        <li class="flex leading-tight">
+                    <ul class="text-gray-700 text-lg leading-[1.15] mt-2 list-disc list-inside"
+     style="line-height: 1.15 !important; margin-top: 0.25rem !important;">
+                        <li class="flex leading-none">
                             <strong class="text-indigo-800 text-xl font-bold w-[5.5rem] flex-shrink-0">발모 시동</strong>
-                            <div class="flex flex-col">
-                                <span class="text-base font-normal">모생환+흑수+캡</span>
-                                <span class="text-xs text-gray-600 pl-1">&nbsp;</span>
+                            <div class="flex flex-col leading-[1.1]">
+                                <span class="text-base font-normal" style="line-height:1.1 !important;">모생환+흑수+캡</span>
+                                <span class="text-xs text-gray-600 pl-1" style="line-height:1.1 !important;">&nbsp;</span>
                             </div>
                         </li>
-                        <li class="flex leading-tight">
+                        <li class="flex leading-none">
                             <strong class="text-indigo-800 text-xl font-bold w-[5.5rem] flex-shrink-0">에너지</strong>
-                            <div class="flex flex-col">
-                                <span class="text-base font-normal">생각의 전환</span>
-                                <span class="text-xs text-gray-600 pl-1">&nbsp;</span>
+                            <div class="flex flex-col leading-[1.1]">
+                                <span class="text-base font-normal" style="line-height:1.1 !important;">생각의 전환</span>
+                                <span class="text-xs text-gray-600 pl-1" style="line-height:1.1 !important;">&nbsp;</span>
                             </div>
                         </li>
-                        <li class="flex leading-tight">
+                        <li class="flex leading-none">
                             <strong class="text-indigo-800 text-xl font-bold w-[5.5rem] flex-shrink-0">유지</strong>
-                            <div class="flex flex-col">
-                                <span class="text-base font-normal">추가 치료 불필요</span>
-                                <span class="text-xs text-gray-600 pl-1">각종 도구나 약물 없이 발모 유지</span>
+                            <div class="flex flex-col leading-[1.1]">
+                                <span class="text-base font-normal" style="line-height:1.1 !important;">추가 치료 불필요</span>
+                                <span class="text-xs text-gray-600 pl-1" style="line-height:1.1 !important;">각종 도구나 약물 없이 발모 유지</span>
+                                <div style="width: calc(95% + 5.5rem); margin-left: -5.225rem; margin-top: 0.75rem;">
+                                    <img src="think.png" alt="발모생각 탈모 전후 비교" class="rounded-lg" style="width: 95%; max-width: none; height: auto; display: block; margin: 0 auto;">
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -886,17 +890,15 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                 <div class="bg-red-50 p-6 rounded-2xl shadow-xl border-t-8 border-red-500 transform transition duration-300 hover:bg-red-100">
                     <div class="flex items-center mb-3">
                         <span class="text-3xl mr-3 text-red-600">🛡️</span>
-                        <h4 class="text-2xl font-bold text-red-800">완치 기간</h4>
+                        <h4 class="text-2xl font-bold text-red-800">탈모 완치</h4>
                     </div>
-                    <p class="text-gray-700 text-lg leading-relaxed mt-2 font-semibold">
-                        탈모보다 발모가 더 쉽습니다. 그러나 시간은 걸립니다.
+                    <p class="text-gray-700 text-sm leading-relaxed mt-2 font-semibold">
+                      탈모인이 정상인이 되는 것을 말함. 발모시동 도구와 탈모인의 노력으로 완치됨
                     </p>
-                    <ul class="text-gray-700 text-lg leading-relaxed space-y-1 mt-2 list-disc list-inside">
-                        <li class="text-sm">10% 탈모 - 3개월</li>
-                        <li class="text-sm">20% 탈모 - 5개월</li>
-                        <li class="text-sm">30% 탈모 - 7개월</li>
-                        <li class="text-sm">50% 탈모 - 12개월</li>
+                    <ul class="text-gray-700 text-lg leading-[1.2] mt-2 list-disc list-inside" style="line-height: 1.2 !important;">
+                        <li class="text-xs">10% 탈모:3개월 20%탈모:5개월 30%탈모:7개월 50%탈모:12개월 </li>
                     </ul>
+                    <img src="talmo%.png" alt="탈모 완치 과정 안내" class="rounded-xl shadow-lg mt-4" style="width: 110%; max-width: none; height: auto; display: block; margin-left: -5%; margin-right: -5%;">
                 </div>
             </div>
         </section>
@@ -904,16 +906,16 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         <section class="p-6 sm:p-10 bg-gray-100 border-t border-b border-gray-300">
             <div class="text-center mb-6">
                 <h3 class="text-2xl sm:text-3xl font-bold text-gray-700 mb-1">
-                    "거짓말처럼 머리카락이 나더군요. 친구들이 다 놀래요."
+                  발모제는 왜! 탈모를 완치시키지 못하는가?
                 </h3>
-                <p class="text-lg text-gray-500 font-medium">실제 사용자들의 생생한 리뷰</p>
+                <p class="text-lg text-gray-500 font-medium">발모 연구 40년의  결론</p>
             </div>
 
             <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-fuchsia-400">
                 <p class="italic text-gray-800 text-xl leading-relaxed">
-                    "미녹시딜, 프로페시아는 평생 먹어야 하는데 너무 부담스러웠어요. 속는 셈 치고 <br> 이해민 원장 시키는대로 했죠그랬더니 처음에 솜털 같은 게 나더군요. 놀랍습니다."
+                  프로페시아 같은 발모제는 탈모 부위의 고장 난 발모 기능을 살려내지 못합니다. <br> 그래서 발모제를 사용하지 않으면 다시 머리카락이 빠집니다. <br>발모제는 임시 방편 약일 뿐이지 머리카락을 나게 하는 에너지원이 아닙니다.
                 </p>
-                <p class="text-right mt-4 text-base font-semibold text-fuchsia-600">- 김*권 님 (40대, 전문직)</p>
+                <p class="text-right mt-4 text-base font-semibold text-fuchsia-600">- 이해민 모생한의원 원장</p>
             </div>
         </section>
 
@@ -956,11 +958,9 @@ function showTab(tabName) {
     document.getElementById(tabName).classList.add('active');
     
     // 선택된 탭 버튼 활성화
-    if (event && event.currentTarget) {
-        event.currentTarget.classList.add('active');
-    } else {
-        const targetButton = document.querySelector(`.tab-button[data-tab="${tabName}"]`);
-        targetButton && targetButton.classList.add('active');
+    const targetButton = document.querySelector(`.tab-button[data-tab="${tabName}"]`);
+    if (targetButton) {
+        targetButton.classList.add('active');
     }
 
     const balmoFooter = document.getElementById('balmoFooter');
