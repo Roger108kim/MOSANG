@@ -992,6 +992,18 @@ function showTab(tabName) {
         }
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    let hash = window.location.hash.replace('#', '').trim();
+
+    if (!hash) return;
+
+    const exists = document.getElementById(hash);
+    if (exists) {
+        showTab(hash);  
+        exists.scrollIntoView({ behavior: "smooth" });
+    }
+});
 </script>
 
 </body></html>
