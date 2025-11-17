@@ -1,28 +1,58 @@
-// 탭 네비게이션 기능
-(function() {
+// ------------------------------
+// 탭 네비게이션 + 해시 기반 자동 탭 활성화 완성 코드
+// ------------------------------
+
+(function () {
     'use strict';
-    
-    // 페이지 로드 완료 후 실행
-    document.addEventListener('DOMContentLoaded', function() {
-        // 모든 탭 버튼 선택
+
+    document.addEventListener('DOMContentLoaded', function () {
         const tabButtons = document.querySelectorAll('.tab-button[data-tab]');
-        
-        // 각 탭 버튼에 클릭 이벤트 리스너 추가
-        tabButtons.forEach(function(button) {
-            button.addEventListener('click', function(e) {
-                // 기본 링크 동작은 유지 (index.html로 이동)
-                // active 클래스만 관리
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        // ------------------------------
+        // 탭 전환 함수
+        // ------------------------------
+        function activateTab(tabName) {
+            // 버튼 active 처리
+            tabButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-tab') === tabName);
+            });
+
+            // 콘텐츠 표시 처리
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === tabName) {
+                    content.classList.add('active');
+                }
+            });
+        }
+
+        // ------------------------------
+        // 탭 버튼 클릭 이벤트
+        // ------------------------------
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
                 const tabName = this.getAttribute('data-tab');
-                
-                // 모든 탭 버튼에서 active 클래스 제거
-                tabButtons.forEach(function(btn) {
-                    btn.classList.remove('active');
-                });
-                
-                // 클릭된 탭 버튼에 active 클래스 추가
-                this.classList.add('active');
+                activateTab(tabName);
             });
         });
+
+        // ------------------------------
+        // URL 해시(#eatonhwan 등) 자동 탭 열기
+        // ------------------------------
+        const hash = window.location.hash.replace('#', '').trim(); 
+        if (hash) {
+            // index.html#eatonhwan → "eatonhwan"
+            const targetTab = document.querySelector(`.tab-button[data-tab="${hash}"]`);
+            if (targetTab) {
+                activateTab(hash);
+
+                // 스크롤 이동 보정
+                const sectionEl = document.getElementById(hash);
+                if (sectionEl) {
+                    sectionEl.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        }
     });
 })();
-
