@@ -600,7 +600,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
 <div class="max-w-4xl w-full bg-white shadow-2xl rounded-3xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-300">
     <!-- 탭 네비게이션 -->
-    <div class="flex bg-gray-100 rounded-t-3xl" style="position: relative; z-index: 1;">
+    <div class="flex bg-gray-100 rounded-t-3xl" style="position: sticky; top: 0; z-index: 50;">
         <button type="button" class="tab-button flex-1 py-4 px-6 text-lg font-semibold text-gray-700 rounded-tl-3xl" data-tab="yechisu" onclick="showTab('yechisu'); return false;">
             예쥐수
         </button>
