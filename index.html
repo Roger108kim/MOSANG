@@ -994,18 +994,10 @@ function showTab(tabName) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    let hash = window.location.hash.replace('#', '').trim();
-
-    if (hash) {
-        const section = document.getElementById(hash);
-        if (section) {
-            showTab(hash);
-        } else {
-            // 해시가 있지만 해당 섹션이 없으면 기본 탭은 예쥐수
-            showTab('yechisu');
-        }
+    let hash = window.location.hash.replace('#','').trim();
+    if (hash && document.getElementById(hash)) {
+        showTab(hash);
     } else {
-        // 해시가 없을 때만 기본 탭은 예쥐수
         showTab('yechisu');
     }
 });
