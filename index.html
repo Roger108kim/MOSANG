@@ -613,7 +613,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     </div>
 
     <!-- 예쥐수 탭 콘텐츠 -->
-    <div id="yechisu" class="tab-content active">
+    <div id="yechisu" class="tab-content">
         <!-- 포스터 헤더 섹션 (쥐를 잡는 강렬한 제목) -->
         <header class="bg-gradient-to-r from-indigo-700 to-fuchsia-700 p-8 sm:p-12 text-center text-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 50% 10%, #fff, transparent 60%);"></div>
@@ -1000,12 +1000,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const section = document.getElementById(hash);
         if (section) {
             showTab(hash);
-            return;
+        } else {
+            // 해시가 있지만 해당 섹션이 없으면 기본 탭은 예쥐수
+            showTab('yechisu');
         }
+    } else {
+        // 해시가 없을 때만 기본 탭은 예쥐수
+        showTab('yechisu');
     }
-
-    // 해시가 없으면 기본 탭은 예쥐수
-    showTab('yechisu');
 });
 </script>
 
